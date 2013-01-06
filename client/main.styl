@@ -1,0 +1,861 @@
+@css {
+	@import url(http://fonts.googleapis.com/css?family=Petit+Formal+Script);
+
+	@font-face {
+		font-family: 'One Fell Swoop';
+		src: url('http://commondatastorage.googleapis.com/rambillwedding/fonts/ONEFS___.TTF') format("truetype")
+	}
+
+	@font-face {
+		font-family: 'Bebas';
+		src: url('http://commondatastorage.googleapis.com/rambillwedding/fonts/BEBAS___.TTF') format("truetype")
+	}
+
+	@font-face {
+		font-family: 'Porcelain';
+		src: url('http://commondatastorage.googleapis.com/rambillwedding/fonts/PORCELAI.TTF') format("truetype");
+	}
+}
+
+/* Define Stylus Variables */
+noise = url('../images/noise.jpg')
+backgroundGradient = -webkit-linear-gradient(top, rgba(0,0,0,0.3), rgba(0, 0, 0, 0.15) 100px, rgba(0,0,0,0) 52%), -webkit-linear-gradient(bottom, rgba(0,0,0,0.2), rgba(0, 0, 0, 0.1) 100px, rgba(0,0,0,0) 52%)
+
+// Colors
+purple = #5d4157
+cream = #fff4e4
+
+// Quick functions
+alphaBlack(n)
+	rgba(0,0,0,n)
+
+alphaWhite(n)
+	rgba(255,255,255,n)
+
+
+/* Font Rules */
+.cursive
+	font-family: 'One Fell Swoop'
+
+.sans-serif
+	font-family: 'Bebas'
+
+html, body 
+	height 100%
+
+span
+	display inline-block
+
+section 
+	width 100%
+	min-height 100%
+	font-family 'Petit Formal Script', cursive
+	color cream
+
+	.title
+		text-align center
+		text-shadow 0 1px 2px rgba(0, 0, 0, .5)
+
+section:nth-child(odd)
+	box-shadow 0 0 3px rgba(0,0,0,0.4)
+	z-index 2
+
+section:nth-child(even)
+	z-index 1
+
+.green
+	background-image -webkit-linear-gradient(top, rgba(0,0,0,0.3), rgba(0, 0, 0, 0.15) 100px, rgba(0,0,0,0) 52%), 
+	-webkit-linear-gradient(bottom, rgba(0,0,0,0.2), rgba(0, 0, 0, 0.1) 100px, rgba(0,0,0,0) 52%), 
+	-webkit-radial-gradient(0 0, 100px 100px, rgba(0,0,0,0.2), rgba(0,0,0,0)), 
+	-webkit-linear-gradient(rgba(124, 117, 46, 0.882353), rgba(124, 117, 46, 0.882353)), 
+	url('http://commondatastorage.googleapis.com/rambillwedding/images/background.jpg')
+	background-image -moz-linear-gradient(top, rgba(0,0,0,0.3), rgba(0, 0, 0, 0.15) 100px, rgba(0,0,0,0) 52%), 
+	-moz-linear-gradient(bottom, rgba(0,0,0,0.2), rgba(0, 0, 0, 0.1) 100px, rgba(0,0,0,0) 52%), 
+	-moz-linear-gradient(rgba(124, 117, 46, 0.882353), rgba(124, 117, 46, 0.882353)), 
+	url('http://commondatastorage.googleapis.com/rambillwedding/images/background.jpg')
+	background-image -ms-linear-gradient(top, rgba(0,0,0,0.3), rgba(0, 0, 0, 0.15) 100px, rgba(0,0,0,0) 52%), 
+	-ms-linear-gradient(bottom, rgba(0,0,0,0.2), rgba(0, 0, 0, 0.1) 100px, rgba(0,0,0,0) 52%), 
+	-ms-linear-gradient(rgba(124, 117, 46, 0.882353), rgba(124, 117, 46, 0.882353)), 
+	url('http://commondatastorage.googleapis.com/rambillwedding/images/background.jpg')
+
+.purple
+	color purple
+
+/* Nav styles */
+nav 
+	position: fixed
+	width 100%
+	top 0
+	text-align center
+	z-index: 10000
+
+	div
+		position relative
+		display inline-block
+
+		.countdown
+			position absolute
+			display inline-block
+			right -56px
+			top 6px
+			background rgb(#9c0000)
+			background -webkit-linear-gradient(top, #ac0000 0%,#8c0000 100%);
+			background -moz-linear-gradient(top, #ac0000 0%,#8c0000 100%);
+			background -ms-linear-gradient(top, #ac0000 0%,#8c0000 100%);
+			padding 4px 8px
+			color cream
+			z-index -1
+			border-radius 2px
+			box-shadow 0 0 7px rgba(0, 0, 0, 0.5)
+
+			.num
+				margin-right 2px
+
+		ul 
+			list-style none
+			border-radius 3px
+
+			li
+				transition background-image 200ms ease-in-out
+				display inline-block
+				text-align auto
+				color purple
+				border-top 1px solid rgba(255,255,255,0.1)
+				border-bottom 1px solid rgba(0,0,0,0.1)
+				padding 8px 10px 8px 5px
+				text-shadow 0 1px 1px rgba(230,230,230, 0.6)
+				transition transform 250ms ease-in-out
+				text-transform uppercase
+				font-weight bold
+				font-size 12px
+				box-shadow 0 0 2px rgba(0,0,0,0.6)
+
+				background-color: cream
+				background-image: -webkit-linear-gradient(rgba(255,255,255,0.2), rgba(0,0,0,0.2))
+				background-image: -moz-linear-gradient(rgba(255,255,255,0.2), rgba(0,0,0,0.2))
+				background-image: -ms-linear-gradient(rgba(255,255,255,0.2), rgba(0,0,0,0.2))
+
+
+				a
+					text-decoration none
+					color inherit
+
+			li.active
+				background-image -webkit-linear-gradient(rgba(160, 160, 160, 0.2),rgba(0, 0, 0, 0.3))
+
+			li:before
+				text-transform none
+				text-shadow 0 1px black
+
+			li:first-child
+				border-bottom-left-radius 3px
+
+			li:last-child
+				border-bottom-right-radius 3px
+
+
+/* Non responsive properties */
+#intro
+	text-align center
+	margin auto
+	position: relative
+
+	.photowrapper
+		position: absolute
+		width 175px
+		height 250px
+		top 25px
+
+		.photo
+			width 100%
+			height 100%
+			border-radius 8px
+			box-shadow inset 0 0 3px rgba(0,0,0,0.7), 0 1px 2px rgba(255,255,255,0.2)
+			background-size 100% auto
+
+		.accent
+			background-image: url('http://commondatastorage.googleapis.com/rambillwedding/images/accent_200.png');
+			height: 100px;
+			background-size: 100% auto;
+			background-repeat: no-repeat;
+			margin-top: 12px;
+
+	.photowrapper#lauren
+		left -200px
+
+		.photo
+			background-image url('http://commondatastorage.googleapis.com/rambillwedding/images/LaurenTall175.jpg')
+			background-position-y 35%
+
+	.photowrapper#chris
+		right -200px
+
+		.photo
+			background-image url('http://commondatastorage.googleapis.com/rambillwedding/images/ChrisTall175.jpg')
+
+
+	div.line
+		display block
+		padding 0.4rem
+
+	div.line::selection, span.line *::selection
+		background #350840
+
+	div.line.superhuge
+		font-size 5rem
+
+	div.line.huge
+		font-size 4rem
+
+	div.line.large
+		font-size 2.33rem
+
+	div.line.medium
+		font-size 1.67rem
+
+	div.line.small
+		font-size 1.8rem
+
+	div.line .underline
+		border-bottom 1px dotted #5d4157
+
+	div.line .highlight::selection, div.line .highlight *::selection
+		background cream
+
+// Generic styles for sections
+
+section
+	display inline-block
+	position relative
+	background-color rgba(124, 117, 46, 0.88)
+
+	.frilly
+		background-image url('http://commondatastorage.googleapis.com/rambillwedding/images/frilly_200.png')
+		position absolute
+		width 200px
+		height 200px
+		max-width 16.6rem
+		max-height 16.6rem
+		background-size 100% auto
+		background-repeat no-repeat
+
+	.frilly.top
+		top 10px
+
+	.frilly.bottom
+		bottom 10px
+
+	.frilly.left
+		left 10px
+
+	.frilly.right
+		right 10px
+
+	.frilly.top.right
+		-webkit-transform rotate(90deg)
+		-moz-transform rotate(90deg)
+		-ms-transform rotate(90deg)
+
+	.frilly.bottom.right
+		-webkit-transform rotate(180deg)
+		-moz-transform rotate(180deg)
+		-ms-transform rotate(180deg)
+
+	.frilly.bottom.left
+		-webkit-transform rotate(270deg)
+		-moz-transform rotate(270deg)
+		-ms-transform rotate(270deg)
+
+	.content
+
+		display block
+		background-color cream
+		border-radius 3px
+		box-shadow 0 1px 2px rgba(0,0,0,0.3)
+		color: black
+
+		.storebutton
+			padding 3px
+			position: relative
+			-webkit-backface-visibility hidden
+			display block
+			text-align center
+			box-shadow 0 1px 2px rgba(0,0,0,0.6)
+			-webkit-transition all 200ms ease-in-out
+			-moz-transition all 200ms ease-in-out
+			-ms-transition all 200ms ease-in-out
+			border-radius 1px
+			border 1px solid rgba(50,50,50, 0.5)
+			text-shadow 0 1px 2px rgba(255,255,255,0.2), 0 -1px rgba(0,0,0,0.6)
+
+			a
+				text-decoration none
+				color cream
+				display inline-block
+				border 1px dashed cream
+				width 100%
+				height 100%
+				padding 5px 0
+
+		.storebutton:hover
+			box-shadow 0 1px 5px alphaBlack(0.6)
+
+		#target
+			background rgb(192,0,0)
+			background -webkit-linear-gradient(rgba(204,0,1, 0.88), rgba(184,0,0,0.88)), noise
+			background -moz-linear-gradient(rgba(204,0,1, 0.88), rgba(184,0,0,0.88)), noise
+			background -ms-linear-gradient(rgba(204,0,1, 0.88), rgba(184,0,0,0.88)), noise
+
+		#charities 
+			background rgb(76, 126, 177)
+			background -webkit-linear-gradient(rgba(102,153,204, 0.88), rgba(49,100,153, 0.88)), noise
+			background -moz-linear-gradient(rgba(102,153,204, 0.88), rgba(49,100,153, 0.88)), noise
+			background -ms-linear-gradient(rgba(102,153,204, 0.88), rgba(49,100,153, 0.88)), noise
+
+		#crateandbarrel
+			background rgb(27, 28, 30)
+			background -webkit-linear-gradient(rgba(55,57,61, 0.98), rgba(0,0,0, 0.94)), noise
+			background -moz-linear-gradient(rgba(55,57,61, 0.98), rgba(0,0,0, 0.94)), noise
+			background -ms-linear-gradient(rgba(55,57,61, 0.98), rgba(0,0,0, 0.94)), noise
+
+		#weddingrepublic
+			background rgb(238, 118, 90)
+			background -webkit-linear-gradient(rgba(244,127,95,0.92), rgba(228,109,85,0.92)), noise
+			background -moz-linear-gradient(rgba(244,127,95,0.92), rgba(228,109,85,0.92)), noise
+			background -ms-linear-gradient(rgba(244,127,95,0.92), rgba(228,109,85,0.92)), noise
+
+		#bbb
+			background rgb(98, 57, 117)
+			background -webkit-linear-gradient(rgba(121,74,153,0.95), rgba(75,39,89,0.94)), noise
+			background -moz-linear-gradient(rgba(121,74,153,0.95), rgba(75,39,89,0.94)), noise
+			background -ms-linear-gradient(rgba(121,74,153,0.95), rgba(75,39,89,0.94)), noise
+
+
+/* Non responsive ceej intro styles */
+#intro 
+	.laurenchris
+		width 100%
+		height 250px
+		border-radius 8px
+		box-shadow inset 0 0 3px rgba(0,0,0,0.7), 0 1px 2px rgba(255,255,255,0.2)
+		display none
+		background-image url('http://commondatastorage.googleapis.com/rambillwedding/images/lauren_chris_1000.png')
+		background-size 100% auto
+		background-position-y 50%
+
+	#names
+		font-size 5.5rem
+		text-align: center
+
+
+		.name
+			display inline-block
+
+		.and 
+			font-family 'Porcelain'
+			vertical-align top
+			display inline-block
+			text-transform uppercase
+			width: auto
+			text-transform: uppercase
+			font-size: 6.97rem
+			font-weight bold
+			margin -0.5rem 26px 0 18px
+
+	.married
+		margin auto
+		font-size 3.17rem
+		padding-bottom 20px !important
+		margin-bottom 16px
+
+		border-bottom 4px double #5d4157
+
+	.join
+		text-transform uppercase
+
+	.beginning
+		border-bottom 2px dotted #5d4157
+		margin auto
+		padding-bottom 18px !important
+		margin-bottom 4px
+
+
+	.dateWrapper
+		width 100%
+		background-color purple
+		background-image -webkit-linear-gradient(top, rgba(255,255,255,0.8), rgba(255,255,255,0.2) 1px, rgba(255, 255, 255, 0.1) 10%, rgba(255,255,255,0) 50%),
+		-webkit-linear-gradient(bottom, rgba(0,0,0,0.8), rgba(0,0,0,0.2) 1px, rgba(0, 0, 0, 0.1) 10%, rgba(0,0,0,0) 50%),
+		-webkit-linear-gradient(rgba(93,65,87,0.95), rgba(93,65,87,0.95)),
+		noise
+		background-image -moz-linear-gradient(top, rgba(255,255,255,0.8), rgba(255,255,255,0.2) 1px, rgba(255, 255, 255, 0.1) 10%, rgba(255,255,255,0) 50%),
+		-moz-linear-gradient(bottom, rgba(0,0,0,0.8), rgba(0,0,0,0.2) 1px, rgba(0, 0, 0, 0.1) 10%, rgba(0,0,0,0) 50%),
+		-moz-linear-gradient(rgba(93,65,87,0.95), rgba(93,65,87,0.95)),
+		noise
+		background-image -ms-linear-gradient(top, rgba(255,255,255,0.8), rgba(255,255,255,0.2) 1px, rgba(255, 255, 255, 0.1) 10%, rgba(255,255,255,0) 50%),
+		-ms-linear-gradient(bottom, rgba(0,0,0,0.8), rgba(0,0,0,0.2) 1px, rgba(0, 0, 0, 0.1) 10%, rgba(0,0,0,0) 50%),
+		-ms-linear-gradient(rgba(93,65,87,0.95), rgba(93,65,87,0.95)),
+		noise
+		margin auto
+		margin-top 16px
+		padding 4px
+		font-weight bold
+		font-size 1.67rem
+		box-shadow inset 0 0 2px rgba(255,255,255,0.5), 0 1px 2px rgba(0,0,0,0.5)
+
+		.date
+			width: 100%
+			height: 100%
+			padding: 5px
+			border: 1px dashed cream
+			text-shadow: 0 -1px rgba(0, 0, 0, 0.8)
+
+			.calendar
+				float left
+				width 50%
+
+				table
+					width 100%
+
+					td.WEDDINGDATE
+						img 
+							height 1em
+
+
+				.month
+					letter-spacing: 0.05em
+					font-size: 2.17rem
+					border-bottom: 1px dashed cream
+					margin-bottom 5px
+					padding-bottom 5px
+		
+					.year
+						display inline-block
+						margin-left 25px
+
+				.time
+					font-size: 1.47rem
+					width: 100%
+					padding-top: 5px
+					margin-top 5px
+					border-top 1px dashed cream
+
+			
+			.description
+				width 47%
+				margin-left 10px
+				padding-left 4px
+				border-left 1px dashed cream
+				display inline-block
+
+				.and
+					text-transform uppercase
+					font-size 3.33rem
+					text-align center
+					display inline-block
+					font-family 'Porcelain'
+
+				.activity
+					text-align center
+					margin 0 5px
+					font-size 2.42rem
+					padding-top 0.5rem
+					padding-right 1rem
+					display block
+
+					.adjective
+						font-size: 2.92rem
+
+					.noun
+						text-transform uppercase
+						margin-top -0.8rem
+
+				.toFollow
+					font-size 2rem
+
+
+section#registries, section.groomsman, section#stamp
+	background -webkit-linear-gradient(top, rgba(0,0,0,0.3), rgba(0, 0, 0, 0.15) 100px, rgba(0,0,0,0) 52%), 
+	-webkit-linear-gradient(bottom, rgba(0,0,0,0.2), rgba(0, 0, 0, 0.1) 100px, rgba(0,0,0,0) 52%), 
+	-webkit-linear-gradient(rgba(103,65,97,0.95), rgba(103,65,97,0.95)), noise 
+	background -moz-linear-gradient(top, rgba(0,0,0,0.3), rgba(0, 0, 0, 0.15) 100px, rgba(0,0,0,0) 52%), 
+	-moz-linear-gradient(bottom, rgba(0,0,0,0.2), rgba(0, 0, 0, 0.1) 100px, rgba(0,0,0,0) 52%), 
+	-moz-linear-gradient(rgba(103,65,97,0.95), rgba(103,65,97,0.95)), noise 
+	background -ms-linear-gradient(top, rgba(0,0,0,0.3), rgba(0, 0, 0, 0.15) 100px, rgba(0,0,0,0) 52%), 
+	-ms-linear-gradient(bottom, rgba(0,0,0,0.2), rgba(0, 0, 0, 0.1) 100px, rgba(0,0,0,0) 52%), 
+	-ms-linear-gradient(rgba(103,65,97,0.95), rgba(103,65,97,0.95)), noise 
+	position relative
+	background-color rgb(103,65,97)
+
+
+section#gratitude
+	background-image -webkit-linear-gradient(top, rgba(0,0,0,0.3), rgba(0, 0, 0, 0.15) 100px, rgba(0,0,0,0) 52%), 
+	-webkit-linear-gradient(bottom, rgba(0,0,0,0.2), rgba(0, 0, 0, 0.1) 100px, rgba(0,0,0,0) 52%), 
+	-webkit-linear-gradient(rgba(215,164,41,0.95), rgba(215,164,41,0.95)), noise
+	background-image -moz-linear-gradient(top, rgba(0,0,0,0.3), rgba(0, 0, 0, 0.15) 100px, rgba(0,0,0,0) 52%), 
+	-moz-linear-gradient(bottom, rgba(0,0,0,0.2), rgba(0, 0, 0, 0.1) 100px, rgba(0,0,0,0) 52%), 
+	-moz-linear-gradient(rgba(215,164,41,0.95), rgba(215,164,41,0.95)), noise
+	background-image -ms-linear-gradient(top, rgba(0,0,0,0.3), rgba(0, 0, 0, 0.15) 100px, rgba(0,0,0,0) 52%), 
+	-ms-linear-gradient(bottom, rgba(0,0,0,0.2), rgba(0, 0, 0, 0.1) 100px, rgba(0,0,0,0) 52%), 
+	-ms-linear-gradient(rgba(215,164,41,0.95), rgba(215,164,41,0.95)), noise
+	background-color rgb(215,164,41)
+
+	.content
+
+		ul
+			list-style none
+
+			li
+				display block
+				margin 10px 0
+				border-top 1px dashed purple
+
+				p
+					padding 0 10px
+
+				a
+					border-left: 2px solid purple
+					font-family 'Bebas'
+					text-decoration none
+					font-weight bold
+					color: purple
+					display: inline-block
+					margin-bottom: 5px
+					padding: 3px 5px
+					-webkit-transition all 200ms ease-in-out
+					-moz-transition all 200ms ease-in-out
+					-ms-transition all 200ms ease-in-out
+					width 100%
+
+				span
+					border-bottom 1px dashed purple
+
+				a:hover
+					background-color purple
+					color cream
+
+section#stamp
+	min-height 300px
+	padding 60px 0
+
+	.stamp
+		height: 180px
+		width 180px
+		margin auto
+		margin-bottom 50px
+		background-image url('http://commondatastorage.googleapis.com/rambillwedding/images/stamp_180.png')
+		background-position 50% 50%
+		background-size auto 90%
+		background-repeat no-repeat
+		border 3px double cream
+
+
+	.tags
+		padding-top 10px
+		text-align center
+
+		.hashtag
+			color rgba(255,244,228, 1)
+			text-shadow 0 1px rgba(0,0,0,0.6)
+			font-size 5rem
+			text-decoration none
+
+		.insta
+			display inline-block
+			background-size 100% 100%
+			width 60px
+			height 60px
+			background-image url('http://commondatastorage.googleapis.com/rambillwedding/images/insta.png')
+			margin-bottom -3px
+
+		.twitter
+			display inline-block
+			background-size 100% 100%
+			width 60px
+			height 60px
+			margin 0 20px
+			background-image url('http://commondatastorage.googleapis.com/rambillwedding/images/twitter.png')
+
+#homescreen
+	position fixed
+	z-index 100
+	width 100%
+	bottom 10px
+	text-align center
+	font-size 2rem
+	display none
+
+	span
+		width 70%
+		margin auto
+		border-radius 10px
+		opacity 0.95
+		background-color white
+		display inline-block
+		border 1px solid rgb(230,230,230)
+		color purple
+		padding 8px
+
+#homescreen:after
+	width: 0; 
+	height: 0; 
+	border-left: 20px solid transparent;
+	border-right: 20px solid transparent;
+	border-top: 20px solid white;
+	position absolute
+	bottom: -20px
+
+
+section.weddingparty
+	h1
+		font-size 5rem
+		font-weight normal
+		word-spacing 1.5rem
+		text-shadow 0 -1px 1px rgba(0, 0, 0, 0.5)
+	h2
+		font-size 4rem
+		font-weight normal
+		text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
+
+	div.photo
+		background-size cover
+		width 350px
+		height 280px
+		border-radius 5px
+		box-shadow inset 1px 1px 3px rgba(0,0,0,0.6), 1px 1px 1px rgba(255,255,255,0.2)
+		position absolute
+		top 100px
+		right 30px
+
+	div.description
+		text-shadow 0 -1px 1px rgba(0, 0, 0, .2), 0 1px 1px rgba(255, 255, 255, .3)
+		font-size 1.5rem
+
+		.header
+			font-weight bold
+			display inline-block
+			margin-right 10px
+
+
+section.weddingparty.groomsman
+	h1,h2
+		text-align right
+
+	div.photo
+		left 30px
+
+
+section.weddingparty.carriejo
+	div.photo
+		background-image url('https://sphotos-b.xx.fbcdn.net/hphotos-snc6/222140_646452587248_978605065_n.jpg')
+		
+section.weddingparty.henry
+	div.photo
+		background-image url('https://sphotos-a.xx.fbcdn.net/hphotos-ash4/117_513458847285_5868_n.jpg')
+
+// For Larger Screens
+@media all and (min-width:500px)
+
+	html
+		font-size 12px
+
+	#intro
+		width: 500px
+
+
+	section
+		padding 100px 20px 200px 20px
+
+		.title
+			font-size 4rem
+
+	section .content
+		height 90%
+		width 400px
+		margin 10px auto
+		padding 20px
+		font-size 1.5rem
+
+		.storebutton
+			-webkit-backface-visibility hidden
+			display block
+			width 250px
+			padding 4px
+			margin 20px auto
+
+		p
+			font-size 1.1rem
+
+
+@media all and (max-width: 950px)
+	#intro
+		.laurenchris
+			display block
+		.photowrapper
+			display none
+
+
+// For smaller screens
+@media all and (max-width:600px)
+
+	html
+		font-size 11px
+
+	.frilly
+		display none
+
+	#intro
+		width 100%
+
+		.laurenchris
+			width 350px
+			height 180px
+			margin auto
+			background-image url('http://commondatastorage.googleapis.com/rambillwedding/images/lauren_chris_700.png')
+
+		#names
+			font-size 4.5rem
+			.and
+				margin-right 18px
+				font-size 5rem
+
+		.married
+			font-size 2.5rem
+
+
+		.dateWrapper
+			width 95%
+			max-width 400px
+			.date
+				.calendar
+					display block
+					float none
+					width 90%
+					margin auto
+					margin-bottom 0.5rem
+					border-bottom 1px dashed cream
+					.month
+						font-size 2.8rem
+						padding-bottom 4px
+						.year
+							margin-left 15px
+
+					table
+						font-size 2rem
+
+					.time
+						padding-bottom 5px
+
+
+				.description
+					display block
+					float none
+					width 90%
+					margin auto
+					border none
+
+					.adjective
+						font-size 5rem
+
+					.noun
+						font-size 3.5rem
+
+					.toFollow
+						font-size 3rem
+	
+	section
+		padding 50px 10px 40px 10px
+
+		.title
+			font-size 42px
+
+		.content
+			width: 100%
+			max-width 400px
+			margin auto
+			padding 10px
+			font-size 2rem
+			.storebutton
+				width 80%
+				margin 15px auto
+				padding 4px
+
+@media all and (max-width:450px)
+	html
+		font-size 9px
+
+		body
+			#intro
+				.laurenchris
+					width: 300px
+					height: 150px
+					background-image url('http://commondatastorage.googleapis.com/rambillwedding/images/lauren_chris_600.png')
+				.dateWrapper 
+					.date 
+						.calendar 
+							.time
+								font-size 2.1rem
+								padding 5px
+
+			section
+				padding-top 75px
+
+			nav
+				div
+					position relative
+					display block
+					width 104%
+					margin 0 -2%
+
+					ul
+						width 100%
+						li
+							width 33%
+				.countdown
+					display block
+					position static
+					font-size 2rem
+					width 200px
+					margin auto
+					border-bottom-left-radius 4px
+					border-bottom-right-radius 4px
+
+
+
+@media all and (max-width:400px)
+	html 
+		font-size 8px
+		body
+			#intro
+				.laurenchris
+					width 280px
+					height 150px
+					background-image url('http://commondatastorage.googleapis.com/rambillwedding/images/lauren_chris_560.png')
+
+
+@media all and (max-width:300px)
+	html 
+		font-size 7px
+
+@media all and (-webkit-min-device-pixel-ratio:2)
+
+	#intro
+		.photowrapper
+			.accent
+				background-image url('http://commondatastorage.googleapis.com/rambillwedding/images/accent_200@2x.png') !important
+
+		#lauren
+			.photo
+				background-image url('http://commondatastorage.googleapis.com/rambillwedding/images/LaurenTall175@2x.jpg')!important
+
+		#chris
+			.photo
+				background-image url('http://commondatastorage.googleapis.com/rambillwedding/images/ChrisTall175@2x.jpg')!important
+
+	#stamp
+		.stamp
+			background-image url('http://commondatastorage.googleapis.com/rambillwedding/images/stamp_360.png') !important
+
+	section
+		.frilly
+			background-image url('http://commondatastorage.googleapis.com/rambillwedding/images/frilly_400.png') !important
+

@@ -1,0 +1,13 @@
+
+.icon-heart-empty:before { content: '\6f'; } /* 'o' */
+.icon-heart:before { content: '\68'; } /* 'h' */
+.icon-music:before { content: '\6d'; } /* 'm' */
+.icon-basket:before { content: '\73'; } /* 's' */
+.icon-glass:before { content: '\64'; } /* 'd' */
+.icon-gift:before { content: '\67'; } /* 'g' */
+.icon-videocam:before { content: '\76'; } /* 'v' */
+.icon-thumbs-up:before { content: '\74'; } /* 't' */
+.icon-user:before { content: '\70'; } /* 'p' */
+.icon-user-woman:before { content: '\66'; } /* 'f' */
+.icon-box:before { content: '\62'; } /* 'b' */
+.icon-camera:before { content: '\63'; } /* 'c' */
