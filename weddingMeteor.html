@@ -18,10 +18,13 @@
 <nav>
   <div>
 	<ul class="sans-serif">
-	  <li class="intro icon-heart"><a href="#wedding">Wedding</a></li>
-	  <li class="registries icon-gift"><a href="#registries">Registries</a></li>
-	  <li class="gratitude icon-thumbs-up"><a href="#gratitude">Gratitude</a></li>
-	</ul><span class="countdown sans-serif"><span class="num"> </span>Days</span>
+	  <li class="intro"><a href="#wedding" class="icon-heart">Wedding</a></li>
+	  <li class="registries"><a href="#registries" class="icon-gift">Registries</a></li>
+	  <li class="gratitude"><a href="#gratitude" class="icon-thumbs-up">Gratitude</a></li>
+	  <li class="weddingParty"><a>Wedding Party<div class="arrow"></div></a></li>
+	</ul>
+	<div class="partyList sans-serif hidden">{{>partyList}}</div>
+	<span class="countdown sans-serif"><span class="num">{{>countdown}}</span>Days</span>
   </div>
 </nav>
 <section id="wedding" class="green">
@@ -202,97 +205,7 @@
 	</ul>
   </div>
 </section>
-<section class="green weddingparty bridesmaid carriejo">
-  <h1 class="sans-serif">Carrie Jo Pinckard</h1>
-  <h2 class="cursive">Maid of Honor</h2>
-  <div class="photo"></div>
-  <div class="description tk-utopia-std">
-	<div class="location"><span class="header">Lives in: </span><span>Knoxville, TN</span></div>
-	<div class="occupation"><span class="header">Her thing:</span><span>Capturing special moments in <span class="purple">images</span></span></div>
-	<div class="fromLauren"><span class="header">Lauren on Carrie:</span><span>
-		I met Carrie Jo at Berry. But I'd say our true friendship didn't begin until she graduated. Soon after, we were livin' 
-		large on a boat on the Tennessee River. She is my person, we just get each other. In the past four years, our friendship 
-		has grown to be one of the deepest I've ever known. Carrie Jo is my beautiful/talented/creative/driven Maid of Honor! Think 
-		this will keep her from being my photographer? Think again. I can't help it, I just believe in her work and I have to rep</span></div>
-  </div>
-</section>
-<section class="green weddingparty groomsman henry">
-  <h1 class="sans-serif">Henry Shiflett</h1>
-  <h2 class="tk-silkscreen">Best Man</h2>
-  <div class="photo"></div>
-</section>
-<section class="green weddingparty bridesmaid">
-  <h1 class="sans-serif">Kate Ledbetter</h1>
-  <h2 class="cursive">Matron of Honor</h2>
-  <div style="background-image:url('https://s3-us-west-2.amazonaws.com/droplr.storage/files/acc_87308/C35f?AWSAccessKeyId=AKIAJSVQN3Z4K7MT5U2A&amp;Expires=1356907356&amp;Signature=PL9RkHD2MtSOEgS3eaYMA17jkow%3D&amp;response-content-disposition=inline%3B%20filename%2A%3DUTF-8%27%27Screenshot%25202012-12-30%2520at%252016.41.14.png')" class="photo"></div>
-</section>
-<section class="green weddingparty groomsman">
-  <h1 class="sans-serif">Stuart Deaderick</h1>
-  <h2 class="tk-silkscreen">Friend of the Groom</h2>
-  <div style="background-image:url('https://s3-us-west-2.amazonaws.com/droplr.storage/files/acc_87308/ABS3?AWSAccessKeyId=AKIAJSVQN3Z4K7MT5U2A&amp;Expires=1356907716&amp;Signature=6PgtlVfN3Fd8S08OBvCYAW10aco%3D&amp;response-content-disposition=inline%3B%20filename%2A%3DUTF-8%27%27Screenshot%25202012-12-30%2520at%252016.46.38.png')" class="photo"></div>
-</section>
-<section class="green weddingparty bridesmaid">
-  <h1 class="sans-serif">Jess Garner</h1>
-  <h2 class="cursive">Friend of the Bride, Photographer</h2>
-  <div style="background-image:url('https://sphotos-b.xx.fbcdn.net/hphotos-ash3/526876_10100735869114285_1967087982_n.jpg')" class="photo"></div>
-</section>
-<section class="green weddingparty groomsman">
-  <h1 class="sans-serif">Mark Hoffman</h1>
-  <h2 class="tk-silkscreen">Token Jew</h2>
-  <div style="background-image:url('https://sphotos-a.xx.fbcdn.net/hphotos-ash3/550847_4044133707216_1961566823_n.jpg')" class="photo"></div>
-</section>
-<section class="green weddingparty bridesmaid">
-  <h1 class="sans-serif">Avi Izzaguere</h1>
-  <h2 class="cursive">Friend of the Bride</h2>
-</section>
-<section class="green weddingparty groomsman">
-  <h1 class="sans-serif">Bret Vukoder</h1>
-  <h2 class="tk-silkscreen">Competitive Thigh Model</h2>
-  <div style="background-image:url('https://sphotos-b.xx.fbcdn.net/hphotos-ash4/311719_581406824478_616224146_n.jpg')" class="photo"></div>
-</section>
-<section class="green weddingparty bridesmaid">
-  <h1 class="sans-serif">Rachel Abba</h1>
-  <h2 class="cursive">Table</h2>
-</section>
-<section class="green weddingparty groomsman">
-  <h1 class="sans-serif">Jay Slagle</h1>
-  <h2 class="tk-silkscreen">Pure Evil</h2>
-  <div style="background-image:url('https://sphotos-a.xx.fbcdn.net/hphotos-ash4/377302_548723916381_1581690555_n.jpg')" class="photo"></div>
-</section>
-<section class="green weddingparty bridesmaid">
-  <h1 class="sans-serif">Brianne Lindauer</h1>
-  <h2 class="cursive">Baby mama</h2>
-</section>
-<section class="green weddingparty groomsman">
-  <h1 class="sans-serif">Brian Brakebill</h1>
-  <h2 class="tk-silkscreen">Woodsman</h2>
-  <div style="background-image:url('https://sphotos-b.xx.fbcdn.net/hphotos-prn1/535956_1970574682122_268022733_n.jpg')" class="photo"></div>
-</section>
-<section class="green weddingparty bridesmaid">
-  <h1 class="sans-serif">Kasey Burrow</h1>
-  <h2 class="cursive">Bama Lover</h2>
-  <div style="background-image:url('https://sphotos-b.xx.fbcdn.net/hphotos-prn1/22637_522439521998_935717_n.jpg')" class="photo"></div>
-</section>
-<section class="green weddingparty groomsman">
-  <h1 class="sans-serif">Keith Brakebill</h1>
-  <h2 class="tk-silkscreen">Money Manager</h2>
-  <div style="background-image:url('https://sphotos-b.xx.fbcdn.net/hphotos-snc6/261429_10150275502092718_6593974_n.jpg')" class="photo"></div>
-</section>
-<section class="green weddingparty bridesmaid">
-  <h1 class="sans-serif">Erin Brakebill</h1>
-  <h2 class="cursive">Sister of the Groom</h2>
-  <div style="background-image:url('https://sphotos-a.xx.fbcdn.net/hphotos-prn1/59346_3698123825853_38366137_n.jpg')" class="photo"></div>
-</section>
-<section class="green weddingparty groomsman">
-  <h1 class="sans-serif">Chase Ramsey</h1>
-  <h2 class="tk-silkscreen">Brother of the Bride</h2>
-  <div style="background-image:url('https://sphotos-b.xx.fbcdn.net/hphotos-ash4/399279_285378888231947_1752752120_n.jpg')" class="photo"></div>
-</section>
-<section class="green weddingparty bridesmaid">
-  <h1 class="sans-serif">Meghan Francis</h1>
-  <h2 class="cursive">Friend of the Bride</h2>
-  <div style="background-image:url('https://sphotos-a.xx.fbcdn.net/hphotos-snc7/318389_631378706924_1138911545_n.jpg')" class="photo"></div>
-</section>
+{{>partyMembers}}
 <section id="stamp">
   <div class="stamp"></div>
   <div class="tags"><span class="hashtag sans-serif">#rambillwedding</span>
@@ -314,3 +227,13 @@
   })();
 </script>
 </body>
+
+<template name="partyMembers">
+	{{#each members}}
+		{{> weddingParty}}
+	{{/each}}
+</template>
+
+<template name="countdown">
+	{{countdown}}
+</template>

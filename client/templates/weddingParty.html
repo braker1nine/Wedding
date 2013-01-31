@@ -1,22 +1,22 @@
-<template name="weddingparty">
-	<section class="green weddingparty bridesmaid carriejo">
-		<h1 class="sans-serif">{{name}}</h1>
-		<h2 class="cursive">{{title}}</h2>
-		<div class="photo">
-			<div class="description tk-utopia-std">
-				<div class="location">
-					<span class="header">Lives in: </span>
-					<span>{{location}}</span>
-				</div>
-				<div class="occupation">
-					<span class="header">Her thing: </span>
-					<span>{{{occupation}}}</span>
-				</div>
-				<div class="fromLauren">
-					<span class="header">Lauren on Carrie:</span>
-					<p>{{fromLauren}}</p>
-				</div>
+<template name="weddingParty">
+	<section class="green weddingparty {{partyType}}" id="{{id}}"> 
+		<div class="photo" style="background-image:url('images/{{id}}.jpg')"></div>
+		<div class="description tk-utopia-std">
+			<h1 class="sans-serif">{{firstName}} {{lastName}}</h1>
+			<h2 class="{{titleClass}}">{{title}}</h2>
+			<div class="location">
+				<span class="header">Lives in: </span>
+				<span>{{location}}</span>
+			</div>
+			<div class="occupation">
+				<span class="header">{{hisOrHer}} thing: </span>
+				<span>{{{occupation}}}</span>
+			</div>
+			<div class="fromLauren">
+				<span class="header">{{#if fromLauren}}Lauren{{else}}Chris{{/if}} on {{firstName}}:</span>
+				<p>{{#if fromLauren}}{{fromLauren}}{{else}}{{fromChris}}{{/if}}</p>
 			</div>
 		</div>
+		<div style="clear:both;"></div>
 	</section>
 </template>

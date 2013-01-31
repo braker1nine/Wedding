@@ -59,6 +59,7 @@ section
 section:nth-child(odd)
 	box-shadow 0 0 3px rgba(0,0,0,0.4)
 	z-index 2
+	margin-top -4px
 
 section:nth-child(even)
 	z-index 1
@@ -67,16 +68,13 @@ section:nth-child(even)
 	background-image -webkit-linear-gradient(top, rgba(0,0,0,0.3), rgba(0, 0, 0, 0.15) 100px, rgba(0,0,0,0) 52%), 
 	-webkit-linear-gradient(bottom, rgba(0,0,0,0.2), rgba(0, 0, 0, 0.1) 100px, rgba(0,0,0,0) 52%), 
 	-webkit-radial-gradient(0 0, 100px 100px, rgba(0,0,0,0.2), rgba(0,0,0,0)), 
-	-webkit-linear-gradient(rgba(124, 117, 46, 0.882353), rgba(124, 117, 46, 0.882353)), 
-	url('http://commondatastorage.googleapis.com/rambillwedding/images/background.jpg')
+	url('../images/green_noise.jpg')
 	background-image -moz-linear-gradient(top, rgba(0,0,0,0.3), rgba(0, 0, 0, 0.15) 100px, rgba(0,0,0,0) 52%), 
 	-moz-linear-gradient(bottom, rgba(0,0,0,0.2), rgba(0, 0, 0, 0.1) 100px, rgba(0,0,0,0) 52%), 
-	-moz-linear-gradient(rgba(124, 117, 46, 0.882353), rgba(124, 117, 46, 0.882353)), 
-	url('http://commondatastorage.googleapis.com/rambillwedding/images/background.jpg')
+	url('../images/green_noise.jpg')
 	background-image -ms-linear-gradient(top, rgba(0,0,0,0.3), rgba(0, 0, 0, 0.15) 100px, rgba(0,0,0,0) 52%), 
 	-ms-linear-gradient(bottom, rgba(0,0,0,0.2), rgba(0, 0, 0, 0.1) 100px, rgba(0,0,0,0) 52%), 
-	-ms-linear-gradient(rgba(124, 117, 46, 0.882353), rgba(124, 117, 46, 0.882353)), 
-	url('http://commondatastorage.googleapis.com/rambillwedding/images/background.jpg')
+	url('../images/green_noise.jpg')
 
 .purple
 	color purple
@@ -96,7 +94,7 @@ nav
 		.countdown
 			position absolute
 			display inline-block
-			right -56px
+			right -52px
 			top 6px
 			background rgb(#9c0000)
 			background -webkit-linear-gradient(top, #ac0000 0%,#8c0000 100%);
@@ -106,29 +104,33 @@ nav
 			color cream
 			z-index -1
 			border-radius 2px
-			box-shadow 0 0 7px rgba(0, 0, 0, 0.5)
+			box-shadow: 0 0 7px rgba(0,0,0,0.5), inset 0 1px 3px rgba(255,255,255,0.4), inset 0 -1px 3px rgba(0,0,0,0.2);
 
 			.num
 				margin-right 2px
 
-		ul 
+		ul
 			list-style none
 			border-radius 3px
+			position relative
+			z-index 1
 
 			li
+				float left
 				transition background-image 200ms ease-in-out
+				height 34px
 				display inline-block
 				text-align auto
 				color purple
 				border-top 1px solid rgba(255,255,255,0.1)
 				border-bottom 1px solid rgba(0,0,0,0.1)
-				padding 8px 10px 8px 5px
 				text-shadow 0 1px 1px rgba(230,230,230, 0.6)
 				transition transform 250ms ease-in-out
 				text-transform uppercase
 				font-weight bold
 				font-size 12px
 				box-shadow 0 0 2px rgba(0,0,0,0.6)
+				width 110px
 
 				background-color: cream
 				background-image: -webkit-linear-gradient(rgba(255,255,255,0.2), rgba(0,0,0,0.2))
@@ -139,19 +141,91 @@ nav
 				a
 					text-decoration none
 					color inherit
+					padding 8px 10px 8px 5px
+					width 100%
+					display inline-block
+					background-color: cream
+					background-image: -webkit-linear-gradient(rgba(255,255,255,0.2), rgba(0,0,0,0.2))
+					background-image: -moz-linear-gradient(rgba(255,255,255,0.2), rgba(0,0,0,0.2))
+					background-image: -ms-linear-gradient(rgba(255,255,255,0.2), rgba(0,0,0,0.2))
+
+				a:before
+					text-transform none
+					text-shadow 0 1px black
 
 			li.active
 				background-image -webkit-linear-gradient(rgba(160, 160, 160, 0.2),rgba(0, 0, 0, 0.3))
-
-			li:before
-				text-transform none
-				text-shadow 0 1px black
 
 			li:first-child
 				border-bottom-left-radius 3px
 
 			li:last-child
 				border-bottom-right-radius 3px
+
+			li.weddingParty
+				width 120px 
+
+				div.arrow
+					width: 0;
+					height: 7px;
+					margin-left: 3px;
+					margin-right: -3px;
+					border-left: 5px solid transparent;
+					border-right: 5px solid transparent;
+					border-top: 5px solid purple;
+					display: inline-block;
+
+		div.partyList.shown
+			-webkit-transform translate3d(0,385px,0)
+
+		div.partyList
+			width 424px
+			border 1px solid cream
+			margin-top -5px
+			padding 5px 0
+			background -webkit-linear-gradient(top, rgba(0,0,0,0.3), rgba(0, 0, 0, 0.15) 100px, rgba(0,0,0,0) 52%), 
+			-webkit-linear-gradient(bottom, rgba(0,0,0,0.2), rgba(0, 0, 0, 0.1) 100px, rgba(0,0,0,0) 52%), 
+			url('../images/purple_noise.jpg')
+			background -moz-linear-gradient(top, rgba(0,0,0,0.3), rgba(0, 0, 0, 0.15) 100px, rgba(0,0,0,0) 52%), 
+			-moz-linear-gradient(bottom, rgba(0,0,0,0.2), rgba(0, 0, 0, 0.1) 100px, rgba(0,0,0,0) 52%), 
+			url('../images/purple_noise.jpg')
+			background -ms-linear-gradient(top, rgba(0,0,0,0.3), rgba(0, 0, 0, 0.15) 100px, rgba(0,0,0,0) 52%), 
+			-ms-linear-gradient(bottom, rgba(0,0,0,0.2), rgba(0, 0, 0, 0.1) 100px, rgba(0,0,0,0) 52%), 
+			url('../images/purple_noise.jpg')
+			background-color rgb(103,65,97)
+			box-shadow inset 0 -1px 1px rgba(0,0,0,0.7), 0 2px 4px rgba(0,0,0,0.5)
+			border-radius 3px
+			-webkit-transition -webkit-transform 333ms ease-in-out
+			top: -354px;
+			margin: auto;
+			left: 14px;
+			position absolute
+
+			a
+				background-color: cream
+				background-image: -webkit-linear-gradient(rgba(255,255,255,0.2), rgba(0,0,0,0.2))
+				background-image: -moz-linear-gradient(rgba(255,255,255,0.2), rgba(0,0,0,0.2))
+				background-image: -ms-linear-gradient(rgba(255,255,255,0.2), rgba(0,0,0,0.2))
+
+				border-radius 2px
+				padding 6px 4px
+				margin 5px 8px
+				display inline-block
+				width 190px
+				text-decoration none
+				color purple
+				word-spacing 0.3rem
+				text-shadow 0 1px rgba(255,255,255,0.5)
+				box-shadow inset 0 -1px 1px rgba(0,0,0,0.3), inset 0 1px 1px rgba(255,255,255,0.6), 0 0 4px rgba(0,0,0,0.7)
+
+			div.photo
+				height 22px
+				width 22px
+				margin -3px 0
+				background-size cover
+				border-radius 2px
+				box-shadow inset 0 1px 1px rgba(0,0,0,0.5)
+				float left
 
 
 /* Non responsive properties */
@@ -360,7 +434,7 @@ section
 			text-transform: uppercase
 			font-size: 6.97rem
 			font-weight bold
-			margin -0.5rem 26px 0 18px
+			margin -0.5rem 5px 0 18px
 
 	.married
 		margin auto
@@ -490,13 +564,13 @@ section#registries, section.groomsman, section#stamp
 section#gratitude
 	background-image -webkit-linear-gradient(top, rgba(0,0,0,0.3), rgba(0, 0, 0, 0.15) 100px, rgba(0,0,0,0) 52%), 
 	-webkit-linear-gradient(bottom, rgba(0,0,0,0.2), rgba(0, 0, 0, 0.1) 100px, rgba(0,0,0,0) 52%), 
-	-webkit-linear-gradient(rgba(215,164,41,0.95), rgba(215,164,41,0.95)), noise
+	url('../images/yellow_noise.jpg')
 	background-image -moz-linear-gradient(top, rgba(0,0,0,0.3), rgba(0, 0, 0, 0.15) 100px, rgba(0,0,0,0) 52%), 
 	-moz-linear-gradient(bottom, rgba(0,0,0,0.2), rgba(0, 0, 0, 0.1) 100px, rgba(0,0,0,0) 52%), 
-	-moz-linear-gradient(rgba(215,164,41,0.95), rgba(215,164,41,0.95)), noise
+	url('../images/yellow_noise.jpg')
 	background-image -ms-linear-gradient(top, rgba(0,0,0,0.3), rgba(0, 0, 0, 0.15) 100px, rgba(0,0,0,0) 52%), 
 	-ms-linear-gradient(bottom, rgba(0,0,0,0.2), rgba(0, 0, 0, 0.1) 100px, rgba(0,0,0,0) 52%), 
-	-ms-linear-gradient(rgba(215,164,41,0.95), rgba(215,164,41,0.95)), noise
+	url('../images/yellow_noise.jpg')
 	background-color rgb(215,164,41)
 
 	.content
@@ -606,6 +680,9 @@ section#stamp
 
 
 section.weddingparty
+
+	margin-top -4px
+
 	h1
 		font-size 5rem
 		font-weight normal
@@ -622,19 +699,57 @@ section.weddingparty
 		height 280px
 		border-radius 5px
 		box-shadow inset 1px 1px 3px rgba(0,0,0,0.6), 1px 1px 1px rgba(255,255,255,0.2)
-		position absolute
-		top 100px
-		right 30px
+
 
 	div.description
 		text-shadow 0 -1px 1px rgba(0, 0, 0, .2), 0 1px 1px rgba(255, 255, 255, .3)
 		font-size 1.5rem
+		width 50%
 
 		.header
 			font-weight bold
 			display inline-block
 			margin-right 10px
 
+		p
+			font-size 15px
+			word-spacing 3px
+			line-height 22px
+
+section.weddingparty.bridesmaid
+	div.description
+		float left
+
+	div.photo
+		float right
+
+section.weddingparty.groomsman
+	div.description
+		float right
+
+	div.photo
+		float left
+
+section#avi	
+	div.photo
+		width 240px
+		height 360px
+
+section#kate
+	div.photo
+		height 350px
+		width 260px
+		background-position 50%
+
+section#jess
+	div.photo
+		height 400px
+		width 280px
+
+section#rachel
+	div.photo
+		width 240px
+		height 340px
 
 section.weddingparty.groomsman
 	h1,h2
@@ -643,14 +758,9 @@ section.weddingparty.groomsman
 	div.photo
 		left 30px
 
+	div.description
+		float right
 
-section.weddingparty.carriejo
-	div.photo
-		background-image url('https://sphotos-b.xx.fbcdn.net/hphotos-snc6/222140_646452587248_978605065_n.jpg')
-		
-section.weddingparty.henry
-	div.photo
-		background-image url('https://sphotos-a.xx.fbcdn.net/hphotos-ash4/117_513458847285_5868_n.jpg')
 
 // For Larger Screens
 @media all and (min-width:500px)
