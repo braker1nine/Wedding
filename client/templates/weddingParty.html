@@ -5,15 +5,15 @@
 			<h1 class="sans-serif">{{firstName}} {{lastName}}</h1>
 			<h2 class="{{titleClass}}">{{title}}</h2>
 			<div class="location">
-				<span class="header">Lives in: </span>
+				<span class="header">Lives in </span>
 				<span>{{location}}</span>
 			</div>
 			<div class="occupation">
-				<span class="header">{{hisOrHer}} thing: </span>
+				<span class="header">{{hisOrHer}} thing </span>
 				<span>{{{occupation}}}</span>
 			</div>
 			<div class="fromLauren">
-				<span class="header">{{#if fromLauren}}Lauren{{else}}Chris{{/if}} on {{firstName}}:</span>
+				<span class="header">{{#if fromLauren}}Lauren{{else}}Chris{{/if}} on {{firstName}}</span>
 				<p>{{#if fromLauren}}{{fromLauren}}{{else}}{{fromChris}}{{/if}}</p>
 			</div>
 		</div>
