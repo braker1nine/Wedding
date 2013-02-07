@@ -276,7 +276,7 @@ if (Meteor.isServer) {
         lastName: 'Francis',
         partyType: 'bridesmaid',
         title: 'Meggie Franchise, African Adventuress',
-        location: 'Africa?',
+        location: 'Ibadan, Nigeria',
         hometown: 'Somewhere in Alaska',
         occupation: 'Master of disguise',
         fromLauren: 'Meghan will be Bridesmaid #9 from afar... like, REALLY far. Through the ever amazing provision of God, Meghan moved '+
