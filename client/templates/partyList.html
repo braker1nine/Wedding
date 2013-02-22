@@ -1,5 +1,5 @@
 <template name="partyList">
 	{{#each members}}
-		<a class="{{this.id}} {{this.partyType}}" href="#{{this.id}}"><div class="photo {{this.id}}" style="background-image:url('images/{{this.id}}_small@2x.jpg');"></div>{{this.firstName}} {{this.lastName}}</a>
+		<a class="{{this.id}} {{this.partyType}}" href="#{{this.id}}"><div class="photo {{this.id}}" style="background-image:url('images/{{this.id}}_small@2x.jpg');"></div><span class="firstName">{{this.firstName}}</span> <span class="lastName"> {{this.lastName}}</span></a>
 	{{/each}}
 </template>

@@ -1,7 +1,7 @@
 @font-face {
   font-family: 'rambill';
-  src: url("http://commondatastorage.googleapis.com/rambillwedding/fonts/rambill.eot");
-  src: url("http://commondatastorage.googleapis.com/rambillwedding/fonts/rambill.eot?#iefix") format('embedded-opentype'), url("http://commondatastorage.googleapis.com/rambillwedding/fonts/rambill.woff") format('woff'), url("http://commondatastorage.googleapis.com/rambillwedding/fonts/rambill.ttf") format('truetype'), url("http://commondatastorage.googleapis.com/rambillwedding/fonts/rambill.svg#rambill") format('svg');
+  src: url("/../fonts/rambill.eot");
+  src: url("/../fonts/rambill.eot?#iefix") format('embedded-opentype'), url("/../fonts/rambill.woff") format('woff'), url("/../fonts/rambill.ttf") format('truetype'), url("/../fonts/rambill.svg#rambill") format('svg');
   font-weight: normal;
   font-style: normal;
 }

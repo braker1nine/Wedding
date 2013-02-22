@@ -7,3 +7,7 @@ autopublish
 insecure
 preserve-inputs
 stylus
+accounts-ui
+accounts-facebook
+accounts-google
+email

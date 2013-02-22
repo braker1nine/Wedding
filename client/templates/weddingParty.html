@@ -1,6 +1,6 @@
 <template name="weddingParty">
 	<section class="green weddingparty {{partyType}}" id="{{id}}"> 
-		<div class="photo" style="background-image:url('images/{{id}}.jpg')"></div>
+		<div class="photo" style="background-image:url('images/{{id}}_3x4.jpg');"></div>
 		<div class="description tk-utopia-std">
 			<h1 class="sans-serif">{{firstName}} {{lastName}}</h1>
 			<h2 class="{{titleClass}}">{{title}}</h2>
@@ -14,7 +14,7 @@
 			</div>
 			<div class="fromLauren">
 				<span class="header">{{#if fromLauren}}Lauren{{else}}Chris{{/if}} on {{firstName}}</span>
-				<p>{{#if fromLauren}}{{fromLauren}}{{else}}{{fromChris}}{{/if}}</p>
+				<p>{{#if fromLauren}}{{{fromLauren}}}{{else}}{{{fromChris}}}{{/if}}</p>
 			</div>
 		</div>
 		<div style="clear:both;"></div>

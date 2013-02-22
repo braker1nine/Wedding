@@ -1,29 +1,23 @@
 @css {
-	@import url(http://fonts.googleapis.com/css?family=Petit+Formal+Script);
-
-	@font-face {
-		font-family: 'One Fell Swoop';
-		src: url('http://commondatastorage.googleapis.com/rambillwedding/fonts/ONEFS___.TTF') format("truetype")
-	}
-
 	@font-face {
 		font-family: 'Bebas';
-		src: url('http://commondatastorage.googleapis.com/rambillwedding/fonts/BEBAS___.TTF') format("truetype")
+		src: url('/../fonts/BEBAS___.TTF') format("truetype")
 	}
 
 	@font-face {
 		font-family: 'Porcelain';
-		src: url('http://commondatastorage.googleapis.com/rambillwedding/fonts/PORCELAI.TTF') format("truetype");
+		src: url('/../fonts/PORCELAI.TTF') format("truetype");
 	}
 }
 
 /* Define Stylus Variables */
-noise = url('../images/noise.jpg')
+noise = url('/../images/noise.jpg')
 backgroundGradient = -webkit-linear-gradient(top, rgba(0,0,0,0.3), rgba(0, 0, 0, 0.15) 100px, rgba(0,0,0,0) 52%), -webkit-linear-gradient(bottom, rgba(0,0,0,0.2), rgba(0, 0, 0, 0.1) 100px, rgba(0,0,0,0) 52%)
 
 // Colors
 purple = #5d4157
 cream = #fff4e4
+green = #8f8e48
 
 // Quick functions
 alphaBlack(n)
@@ -35,10 +29,11 @@ alphaWhite(n)
 
 /* Font Rules */
 .cursive
-	font-family: 'One Fell Swoop'
+	font-family: 'Porcelain'
 
 .sans-serif
 	font-family: 'Bebas'
+/* ------------ */
 
 html, body 
 	height 100%
@@ -46,10 +41,12 @@ html, body
 span
 	display inline-block
 
+section#wedding
+	padding-bottom 100px
+
 section 
 	width 100%
 	min-height 100%
-	font-family 'Petit Formal Script', cursive
 	color cream
 
 	.title
@@ -67,17 +64,23 @@ section:nth-child(even)
 .green
 	background-image -webkit-linear-gradient(top, rgba(0,0,0,0.3), rgba(0, 0, 0, 0.15) 100px, rgba(0,0,0,0) 52%), 
 	-webkit-linear-gradient(bottom, rgba(0,0,0,0.2), rgba(0, 0, 0, 0.1) 100px, rgba(0,0,0,0) 52%), 
-	-webkit-radial-gradient(0 0, 100px 100px, rgba(0,0,0,0.2), rgba(0,0,0,0)), 
-	url('../images/green_noise.jpg')
+	-webkit-radial-gradient(0 0, 100px 100px, rgba(0,0,0,0.2), rgba(0,0,0,0)),
+	-webkit-linear-gradient(rgba(124,117,46,0.882),rgba(124,117,46,0.882)),
+	url('/../images/background.jpg')
 	background-image -moz-linear-gradient(top, rgba(0,0,0,0.3), rgba(0, 0, 0, 0.15) 100px, rgba(0,0,0,0) 52%), 
 	-moz-linear-gradient(bottom, rgba(0,0,0,0.2), rgba(0, 0, 0, 0.1) 100px, rgba(0,0,0,0) 52%), 
-	url('../images/green_noise.jpg')
+	-moz-linear-gradient(rgba(124,117,46,0.882),rgba(124,117,46,0.882)),
+	url('/../images/background.jpg')
 	background-image -ms-linear-gradient(top, rgba(0,0,0,0.3), rgba(0, 0, 0, 0.15) 100px, rgba(0,0,0,0) 52%), 
 	-ms-linear-gradient(bottom, rgba(0,0,0,0.2), rgba(0, 0, 0, 0.1) 100px, rgba(0,0,0,0) 52%), 
-	url('../images/green_noise.jpg')
+	-ms-linear-gradient(rgba(124,117,46,0.882),rgba(124,117,46,0.882)),
+	url('/../images/background.jpg')
 
 .purple
 	color purple
+
+.greenText
+	color green
 
 /* Nav styles */
 nav 
@@ -164,6 +167,9 @@ nav
 
 			li.weddingParty
 				width 120px 
+				-webkit-transform translate3d(0,0,0)
+				-moz-transform translate3d(0,0,0)
+				transform translate3d(0,0,0)
 
 				div.arrow
 					width: 0;
@@ -177,6 +183,8 @@ nav
 
 		div.partyList.shown
 			-webkit-transform translate3d(0,385px,0)
+			-moz-transform translate3d(0,385px,0)
+			transform translate3d(0,385px,0)
 
 		div.partyList
 			width 424px
@@ -196,6 +204,9 @@ nav
 			box-shadow inset 0 -1px 1px rgba(0,0,0,0.7), 0 2px 4px rgba(0,0,0,0.5)
 			border-radius 3px
 			-webkit-transition -webkit-transform 333ms ease-in-out
+			-moz-transition -moz-transform 333ms ease-in-out
+			transition transform 333ms ease-in-out
+
 			top: -354px;
 			margin: auto;
 			left: 14px;
@@ -218,6 +229,9 @@ nav
 				text-shadow 0 1px rgba(255,255,255,0.5)
 				box-shadow inset 0 -1px 1px rgba(0,0,0,0.3), inset 0 1px 1px rgba(255,255,255,0.6), 0 0 4px rgba(0,0,0,0.7)
 
+				.firstName
+					margin-right 0.3rem
+
 			div.photo
 				height 22px
 				width 22px
@@ -227,8 +241,16 @@ nav
 				box-shadow inset 0 1px 1px rgba(0,0,0,0.5)
 				float left
 
-
 /* Non responsive properties */
+#thickboxBackdrop
+	position fixed
+	height 100%
+	width 100%
+	background-color rgba(0,0,0,0.6)
+	top 0
+	z-index 19999
+	display none
+
 #intro
 	text-align center
 	margin auto
@@ -248,7 +270,7 @@ nav
 			background-size 100% auto
 
 		.accent
-			background-image: url('http://commondatastorage.googleapis.com/rambillwedding/images/accent_200.png');
+			background-image: url('/../images/accent_200.png');
 			height: 100px;
 			background-size: 100% auto;
 			background-repeat: no-repeat;
@@ -258,14 +280,14 @@ nav
 		left -200px
 
 		.photo
-			background-image url('http://commondatastorage.googleapis.com/rambillwedding/images/LaurenTall175.jpg')
+			background-image url('/../images/LaurenTall175.jpg')
 			background-position-y 35%
 
 	.photowrapper#chris
 		right -200px
 
 		.photo
-			background-image url('http://commondatastorage.googleapis.com/rambillwedding/images/ChrisTall175.jpg')
+			background-image url('/../images/ChrisTall175.jpg')
 
 
 	div.line
@@ -304,7 +326,7 @@ section
 	background-color rgba(124, 117, 46, 0.88)
 
 	.frilly
-		background-image url('http://commondatastorage.googleapis.com/rambillwedding/images/frilly_200.png')
+		background-image url('/../images/frilly_200.png')
 		position absolute
 		width 200px
 		height 200px
@@ -413,7 +435,7 @@ section
 		border-radius 8px
 		box-shadow inset 0 0 3px rgba(0,0,0,0.7), 0 1px 2px rgba(255,255,255,0.2)
 		display none
-		background-image url('http://commondatastorage.googleapis.com/rambillwedding/images/lauren_chris_1000.png')
+		background-image url('/../images/lauren_chris_1000.png')
 		background-size 100% auto
 		background-position-y 50%
 
@@ -546,6 +568,44 @@ section
 				.toFollow
 					font-size 2rem
 
+	#replyThankYou
+		font-size: 30px;
+		margin: auto;
+		margin-top: 20px;
+		border-bottom: 3px double;
+		width: 300px;
+		padding-bottom: 5px;
+
+
+	.rsvpLoadButton.hidden
+		display none
+
+	.rsvpLoadButton
+		background-color: #fff4e4;
+		box-shadow: 0 0 8px rgba(0,0,0,0.8), inset 0 1px 1px rgba(255,255,255,0.5), inset 0 -1px 1px rgba(0,0,0,0.6);
+		width: 100%;
+		margin: auto;
+		max-width: 160px;
+		height: 60px;
+		margin-top: 20px;
+		padding: 4px;
+
+		.colorBackground
+			background-image: -webkit-repeating-linear-gradient(45deg, purple, purple 10px, green 10px, green 20px);
+			background-image: -moz-repeating-linear-gradient(45deg, purple, purple 10px, green 10px, green 20px);
+			background-image: repeating-linear-gradient(45deg, purple, purple 10px, green 10px, green 20px);
+			height: 100%;
+			box-shadow: inset 0 0 6px rgba(0,0,0,0.8);
+			padding: 8px;
+
+			.buttonContent
+				background-color cream
+				height 100%
+				color purple
+				font-size: 20px;
+				padding-top: 6px;
+				box-shadow: 0 0 3px rgba(0,0,0,0.8), inset 0 1px 1px rgba(255,255,255,0.6), inset 0 -1px 1px rgba(0,0,0,0.3);
+
 
 section#registries, section.groomsman, section#stamp
 	background -webkit-linear-gradient(top, rgba(0,0,0,0.3), rgba(0, 0, 0, 0.15) 100px, rgba(0,0,0,0) 52%), 
@@ -564,13 +624,16 @@ section#registries, section.groomsman, section#stamp
 section#gratitude
 	background-image -webkit-linear-gradient(top, rgba(0,0,0,0.3), rgba(0, 0, 0, 0.15) 100px, rgba(0,0,0,0) 52%), 
 	-webkit-linear-gradient(bottom, rgba(0,0,0,0.2), rgba(0, 0, 0, 0.1) 100px, rgba(0,0,0,0) 52%), 
-	url('../images/yellow_noise.jpg')
+	-webkit-linear-gradient(rgba(215,164,41,0.95),rgba(215,164,41,0.95)),
+	noise
 	background-image -moz-linear-gradient(top, rgba(0,0,0,0.3), rgba(0, 0, 0, 0.15) 100px, rgba(0,0,0,0) 52%), 
 	-moz-linear-gradient(bottom, rgba(0,0,0,0.2), rgba(0, 0, 0, 0.1) 100px, rgba(0,0,0,0) 52%), 
-	url('../images/yellow_noise.jpg')
+	-moz-linear-gradient(rgba(215,164,41,0.95),rgba(215,164,41,0.95)),
+	noise
 	background-image -ms-linear-gradient(top, rgba(0,0,0,0.3), rgba(0, 0, 0, 0.15) 100px, rgba(0,0,0,0) 52%), 
 	-ms-linear-gradient(bottom, rgba(0,0,0,0.2), rgba(0, 0, 0, 0.1) 100px, rgba(0,0,0,0) 52%), 
-	url('../images/yellow_noise.jpg')
+	-ms-linear-gradient(rgba(215,164,41,0.95),rgba(215,164,41,0.95)),
+	noise
 	background-color rgb(215,164,41)
 
 	.content
@@ -607,7 +670,187 @@ section#gratitude
 					background-color purple
 					color cream
 
+div.thickbox
+	display none
+	position fixed
+	z-index 20000
+	top 50px
+	left 50%
+	width 320px
+	margin-left -160px
+	background-color #fffeef
+	border 1px solid #644834
+	box-shadow 0 0 100px rgba(0,0,0,0.9)
+	color #4d352c
+
+	h1
+		font-size 22px
+
+	h2
+		font-size 18px
+
+	.title h4
+		text-align right
+		padding-right 30px
+		padding-top 4px
+		color red
+		display none
+		font-size 12px
+
+	.title.error h4
+		display block
+
+	.doublerow.heading
+		word-spacing 0.4em
+		font-size 10px
+		height 40px
+
+		> div
+			height 40px
+
+	.doublerow
+		font-size 12px
+		position: relative
+		padding-top 0
+		text-align left
+		border-bottom 1px solid #644834
+
+		> div
+			box-sizing border-box
+
+		div
+			display inline-block
+
+		> :first-child
+			min-height: 50px;
+			width: 27%;
+			padding: 10px;
+			text-align: center;
+			border-right 2px dotted #644834
+			font-weight bold
+
+		> :last-child
+			width 70%
+			text-align center
+
+	.salutation
+		font-weight bold
+
+		.option
+			margin: 4px 6px 0 2px;
+			padding: 4px;
+			border: 2px solid transparent
+
+		.option.circled
+			border: 2px solid #4d352c;
+			border-radius: 50%;
+
+		input[name="name"]
+			background-color transparent
+			color #4d352c
+			padding 6px
+			width 200px
+			border 1px solid #4d352c
+			margin-top 8px
+
+		> :last-child
+			text-align left
+
+	.salutation.error
+		.nameLabel
+			color red
+
+		input[name="name"]
+			border 1px solid red
+
+
+	.reply_status
+		.check
+			-webkit-transform: rotate(-90deg);
+			-moz-transform: rotate(-90deg);
+			transform: rotate(-90deg)
+			position: absolute;
+			left: 14px;
+			top: 28px;
+
+		.box
+			width: 24px;
+			height: 24px;
+			border: 1px solid;
+			float: right;
+			font-size 18px
+
+		.box.checked::before
+			content '✓'
+
+		.option
+			display: block;
+			margin-top: 14px;
+
+		> :last-child
+			text-align left
+
+	.reply_status.error
+		color red
+
+		.box
+			border 1px solid red
+
+	.num_attending
+
+		border-bottom 3px double #644834
+
+		input[name="count"]
+			background-color: transparent;
+			border 1px solid transparent
+			width: 85px;
+			color: rgb(77, 53, 44);
+			font-size 22px
+
+	.num_attending.error
+		color red
+
+		input[name="count"]
+			border 1px solid red
+
+	.title
+		border-bottom 3px double
+
+	> div
+		border-bottom 1px solid #644834
+		text-align center
+		min-height 40px
+		position: relative
+		padding-top 6px
+
+		label
+			position absolute
+			left 10px
+			top 2px
+			font-size 10px
+
+	.notes
+		textarea
+			background-color transparent
+			text-align left
+			resize none
+			margin-bottom: -26px;
+			height: 48px;
+
+	#submit
+		position: absolute;
+		background-color: white;
+		padding: 10px 20px;
+		width: 80px;
+		left: 50%;
+		margin-left: -40px;
+		box-shadow: 0 5px 6px rgba(0,0,0,0.4);
+		background-color: #fffeef;
+		color: #4d352c;
+		text-align: center;
+
 section#stamp
+	margin-top -3px
 	min-height 300px
 	padding 60px 0
 
@@ -616,7 +859,7 @@ section#stamp
 		width 180px
 		margin auto
 		margin-bottom 50px
-		background-image url('http://commondatastorage.googleapis.com/rambillwedding/images/stamp_180.png')
+		background-image url('/../images/stamp_180.png')
 		background-position 50% 50%
 		background-size auto 90%
 		background-repeat no-repeat
@@ -638,7 +881,7 @@ section#stamp
 			background-size 100% 100%
 			width 60px
 			height 60px
-			background-image url('http://commondatastorage.googleapis.com/rambillwedding/images/insta.png')
+			background-image url('/../images/insta.png')
 			margin-bottom -3px
 
 		.twitter
@@ -647,13 +890,13 @@ section#stamp
 			width 60px
 			height 60px
 			margin 0 20px
-			background-image url('http://commondatastorage.googleapis.com/rambillwedding/images/twitter.png')
+			background-image url('/../images/twitter.png')
 
 #homescreen
 	position fixed
 	z-index 100
 	width 100%
-	bottom 10px
+	bottom 50px
 	text-align center
 	font-size 2rem
 	display none
@@ -702,8 +945,8 @@ section.weddingparty
 
 	div.photo
 		background-size cover
-		width 35%
-		height 30rem
+		width 300px
+		height 400px
 		border-radius 5px
 		box-shadow inset 1px 1px 3px rgba(0,0,0,0.6), 1px 1px 1px rgba(255,255,255,0.2)
 
@@ -727,6 +970,13 @@ section.weddingparty
 			line-height 22px
 			text-align justify
 
+			.purple, .greenText
+				text-shadow none
+				font-weight bold
+
+			a
+				color cream
+
 section.weddingparty.bridesmaid
 	div.description
 		float left
@@ -740,7 +990,7 @@ section.weddingparty.groomsman
 		float right
 
 		.header
-			border-bottom 3px double #8a823f
+			border-bottom 3px double green
 
 	div.photo
 		float left
@@ -812,6 +1062,7 @@ section.weddingparty.groomsman
 		div.photo
 			display block
 			float none !important
+			background-position 50%
 			width 500px
 			height 20rem
 			margin auto
@@ -822,6 +1073,76 @@ section.weddingparty.groomsman
 			float none !important
 			width 500px
 			margin auto
+
+	#carrie
+		.photo
+			background-image url('/../images/carrie_horizontal.jpg') !important
+
+	#henry
+		.photo
+			background-image url('/../images/henry_horizontal.jpg') !important
+
+	#stuart
+		.photo
+			background-image url('/../images/stuart_horizontal.jpg') !important
+
+	#kate
+		.photo
+			background-image url('/../images/kate_horizontal.jpg') !important
+
+	#jess
+		.photo
+			background-image url('/../images/jess_horizontal.jpg') !important
+
+	#mark
+		.photo
+			background-image url('/../images/mark_horizontal.jpg') !important
+
+	#bret
+		.photo
+			background-image url('/../images/bret_horizontal.jpg') !important
+
+	#avi
+		.photo
+			background-image url('/../images/avi_horizontal.jpg') !important
+
+	#rachel
+		.photo
+			background-image url('/../images/rachel_horizontal.jpg') !important
+
+	#jay
+		.photo
+			background-image url('/../images/jay_horizontal.jpg') !important
+
+	#kasey
+		.photo
+			background-image url('/../images/kasey_horizontal.jpg') !important
+
+	#brianne
+		.photo
+			background-image url('/../images/brianne_horizontal.jpg') !important
+
+	#brian
+		.photo
+			background-image url('/../images/brian_horizontal.jpg') !important
+
+	#erin
+		.photo
+			background-image url('/../images/erin_horizontal.jpg') !important
+
+	#keith
+		.photo
+			background-image url('/../images/keith_horizontal.jpg') !important
+
+	#meghan
+		.photo
+			background-image url('/../images/meghan_horizontal.jpg') !important
+
+	#chase
+		.photo
+			background-image url('/../images/chase_horizontal.jpg') !important
+
+
 
 
 // For smaller screens
@@ -840,7 +1161,7 @@ section.weddingparty.groomsman
 			width 350px
 			height 180px
 			margin auto
-			background-image url('http://commondatastorage.googleapis.com/rambillwedding/images/lauren_chris_700.png')
+			background-image url('/../images/lauren_chris_700.png')
 
 		#names
 			font-size 4.5rem
@@ -862,7 +1183,6 @@ section.weddingparty.groomsman
 					width 90%
 					margin auto
 					margin-bottom 0.5rem
-					border-bottom 1px dashed cream
 					.month
 						font-size 2.8rem
 						padding-bottom 4px
@@ -875,9 +1195,8 @@ section.weddingparty.groomsman
 					.time
 						padding-bottom 5px
 
-
 				.description
-					display block
+					display none
 					float none
 					width 90%
 					margin auto
@@ -935,7 +1254,7 @@ section.weddingparty.groomsman
 				.laurenchris
 					width: 300px
 					height: 150px
-					background-image url('http://commondatastorage.googleapis.com/rambillwedding/images/lauren_chris_600.png')
+					background-image url('/../images/lauren_chris_600.png')
 				.dateWrapper 
 					.date 
 						.calendar 
@@ -962,6 +1281,12 @@ section.weddingparty.groomsman
 							position fixed
 							bottom 0
 							left 0
+							z-index 100
+
+							div.arrow
+								border-bottom: 5px solid purple;
+								border-top: none;
+								margin-bottom 2px
 				.countdown
 					display block
 					position static
@@ -971,17 +1296,50 @@ section.weddingparty.groomsman
 					border-bottom-left-radius 4px
 					border-bottom-right-radius 4px
 
+				.partyList
+					width 100%
+					margin 0
+					top auto
+					left 0
+					bottom -354px
+					border-radius 0
+					border-left none
+					border-right none
+					position: fixed
+
+					a
+						font-size 1.5rem
+						width 130px
+
+						.lastName
+							display none
+
+				.partyList.shown
+					-webkit-transform translate3d(0,-385px,0)
+					-moz-transform translate3d(0,-385px,0)
+					transform translate3d(0,-385px,0)
+
+			section.weddingparty
+				div.photo
+					width 90%
+
+				div.description
+					width 90%
+
 
 
 @media all and (max-width:400px)
 	html 
 		font-size 8px
-		body
+		body		
 			#intro
 				.laurenchris
 					width 280px
 					height 150px
-					background-image url('http://commondatastorage.googleapis.com/rambillwedding/images/lauren_chris_560.png')
+					background-image url('/../images/lauren_chris_560.png')
+
+			div.thickbox
+				top 5px
 
 
 @media all and (max-width:300px)
@@ -993,21 +1351,25 @@ section.weddingparty.groomsman
 	#intro
 		.photowrapper
 			.accent
-				background-image url('http://commondatastorage.googleapis.com/rambillwedding/images/accent_200@2x.png') !important
+				background-image url('/../images/accent_200@2x.png') !important
 
 		#lauren
 			.photo
-				background-image url('http://commondatastorage.googleapis.com/rambillwedding/images/LaurenTall175@2x.jpg')!important
+				background-image url('/../images/LaurenTall175@2x.jpg')!important
 
 		#chris
 			.photo
-				background-image url('http://commondatastorage.googleapis.com/rambillwedding/images/ChrisTall175@2x.jpg')!important
+				background-image url('/../images/ChrisTall175@2x.jpg')!important
 
 	#stamp
 		.stamp
-			background-image url('http://commondatastorage.googleapis.com/rambillwedding/images/stamp_360.png') !important
+			background-image url('/../images/stamp_360.png') !important
 
 	section
 		.frilly
-			background-image url('http://commondatastorage.googleapis.com/rambillwedding/images/frilly_400.png') !important
+			background-image url('/../images/frilly_400.png') !important
+
+@media all and (max-height: 480px)
+	.rsvpLoadButton
+		display none	
 

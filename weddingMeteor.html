@@ -1,7 +1,14 @@
 
 <head>
-<script type="text/javascript" src="//use.typekit.net/tsv5ttw.js"></script>
-<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+<script type="text/javascript">
+  (function() {
+    var config = {
+      kitId: 'tsv5ttw',
+      scriptTimeout: 3000
+    };
+    var h=document.getElementsByTagName("html")[0];h.className+=" wf-loading";var t=setTimeout(function(){h.className=h.className.replace(/(\s|^)wf-loading(\s|$)/g," ");h.className+=" wf-inactive"},config.scriptTimeout);var tk=document.createElement("script"),d=false;tk.src='//use.typekit.net/'+config.kitId+'.js';tk.type="text/javascript";tk.async="true";tk.onload=tk.onreadystatechange=function(){var a=this.readyState;if(d||a&&a!="complete"&&a!="loaded")return;d=true;clearTimeout(t);try{Typekit.load(config)}catch(b){}};var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(tk,s)
+  })();
+</script>
 <title>Rambill</title>
 <meta name="viewport" content="initial-scale=1.0, maximum-scale=1, user-scalable=0">
 <meta name="apple-mobile-web-app-capable" content="yes">
@@ -10,9 +17,7 @@
 <link rel="apple-touch-icon-precomposed" sizes="114x114" href="https://dl.dropbox.com/s/lu6phn1ospekxzz/Icon-precomposed%402x.png">
 <link rel="apple-touch-icon-precomposed" sizes="72x72" href="https://dl.dropbox.com/s/tdc65bx91j23hfe/Icon-precomposed-72.png">
 <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://dl.dropbox.com/s/yc2gktz7nvme6vq/Icon-precomposed-72%402x.png">
-<link rel="stylesheet" href="/stylesheets/rambill_font/rambill.css">
-<link rel="stylesheet" href="/stylesheets/style.css">
-<link rel="stylesheet" href="/stylesheets/placeholder.css">
+<link rel="icon" type="image/png" href="images/favicon.png">
 </head>
 <body>
 <nav>
@@ -131,7 +136,7 @@
 		<div style="clear:both;"></div>
 	  </div>
 	</div>
-	<div class="line description"></div>
+	{{>rsvpButton}}
   </div>
 </section>
 <section id="registries" class="tk-charbroiled">
@@ -218,6 +223,8 @@
 	<div style="display:inline-block;"><a href="https://mobile.twitter.com/search?q=%23rambillwedding" class="twitter"></a><a href="instagram://tag?name=rambillwedding" class="insta"></a></div>
   </div>
 </section>
+{{>replyCard}}
+<div id="thickboxBackdrop"></div>
 <div id="homescreen" class="sans-serif"><span>Click down here to save our site to your home screen and keep up to date on the wedding </span></div>
 <script rel="javascript" type="text/javascript" src="http://code.jquery.com/jquery-1.8.0.js"></script>
 <script rel="javascript" type="text/javascript" src="../javascripts/script.js"></script>
@@ -242,4 +249,59 @@
 
 <template name="countdown">
 	{{countdown}}
+</template>
+
+<template name="rsvpButton">
+	{{#if rsvpComplete}}
+	<div id="replyThankYou" class="cursive large">Thank you for replying!</div>
+	{{else}}
+	<div class="rsvpLoadButton {{hidden}}" id="rsvpLoadButton">
+		<div class="colorBackground">
+			<div class="buttonContent cursive">RSVP</div>
+		</div>
+	</div>
+	{{/if}}
+</template>
+
+<template name="replyCard">
+	<div class="thickbox">
+		<div class="cursive"><h1>Kindly reply by</h1></div>
+		<div class="sans-serif duedate"><label>AUTHOR</label><h2>THE 8TH OF MARCH</h2></div>
+		<div class="sans-serif title"><label>TITLE</label><h4>Fill out all required fields (in red.)</h4></div>
+		<div class="doublerow sans-serif heading"><div>DATE DUE</div><div class="">BORROWER'S NAME</div></div>
+		<form>
+			<div class="tk-john-doe salutation doublerow">
+				<div>3/8/13<br><br><span class="nameLabel">( Name )</span></div>
+				<div>
+					<input name="salutation" id="salutation" type="hidden">
+					<span class="option" data-value="mr">Mr.</span>/
+					<span class="option" data-value="mrs">Mrs.</span>/
+					<span class="option" data-value="miss">Miss</span><br>
+					<input name="name" type="text" placeholder="Click to edit."/>
+				</div>
+			</div>
+			<div class="tk-john-doe doublerow reply_status">
+				<div>
+					<span class="check">Check:</span>
+					<div class="box" id="yesbox" data-value="yes"></div>
+					<br><br>
+					<div class="box" id="nobox" data-value="no"></div>
+				</div>
+				<div>
+					<input name="reply_status" id="reply_status" type="hidden">
+					<span class="option" data-value="yes">Can't Wait!</span>
+					<span class="option" data-value="no">Sad to miss.</span>
+				</div>
+			</div>
+			<div class="doublerow num_attending tk-john-doe">
+				<div>No. Attending</div>
+				<div><input name="count" type="number" min="1" max="8" value="1"/></div>
+			</div>
+			<div class="doublerow notes tk-john-doe">
+				<div>Notes</div>
+				<textarea name="notes"></textarea>
+			</div>
+			<span class="sans-serif" id="submit">Reply</span>
+		</form>
+	</div>
 </template>
