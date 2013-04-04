@@ -33,108 +33,10 @@
 </nav>
 <section id="wedding" class="green">
   <div id="intro">
-	<div id="lauren" class="photowrapper">
-	  <div class="photo"></div>
-	  <div class="accent"></div>
-	</div>
-	<div id="chris" class="photowrapper">
-	  <div class="photo"></div>
-	  <div class="accent"></div>
-	</div>
-	<div class="laurenchris"></div>
-	<div id="names" class="line cursive">
-	  <div class="name sans-serif">
-		 
-		Lauren 
-	  </div><span class="purple and"> & </span>
-	  <div class="name sans-serif">Chris</div>
-	</div>
-	<div class="line married tk-silkscreen">are getting married!</div>
-	<div class="line join sans-serif huge">Join us</div>
-	<div class="line celebration cursive superhuge">with great celebration</div>
-	<div class="line beginning tk-silkscreen large">in the beginning of our lives together</div>
-	<div class="dateWrapper tk-utopia-std">
-	  <div class="date">
-		<div class="calendar sans-serif">
-		  <div class="month">March
-			<div class="year">2013</div>
-		  </div>
-		  <table>
-			<tr>
-			  <td></td>
-			  <td></td>
-			  <td></td>
-			  <td></td>
-			  <td></td>
-			  <td>1</td>
-			  <td>2</td>
-			</tr>
-			<tr>
-			  <td>3</td>
-			  <td>4</td>
-			  <td>5</td>
-			  <td>6</td>
-			  <td>7</td>
-			  <td>8</td>
-			  <td>9</td>
-			</tr>
-			<tr>
-			  <td>10</td>
-			  <td>11</td>
-			  <td>12</td>
-			  <td>13</td>
-			  <td>14</td>
-			  <td>15</td>
-			  <td>16</td>
-			</tr>
-			<tr>
-			  <td>17</td>
-			  <td>18</td>
-			  <td>19</td>
-			  <td>20</td>
-			  <td>21</td>
-			  <td>22</td>
-			  <td class="WEDDINGDATE"><img src="http://commondatastorage.googleapis.com/rambillwedding/images/brideAndGroom.png"></td>
-			</tr>
-			<tr>
-			  <td>24</td>
-			  <td>25</td>
-			  <td>26</td>
-			  <td>27</td>
-			  <td>28</td>
-			  <td>29</td>
-			  <td>30</td>
-			</tr>
-			<tr>
-			  <td>31</td>
-			  <td></td>
-			  <td></td>
-			  <td></td>
-			  <td></td>
-			  <td></td>
-			  <td></td>
-			</tr>
-		  </table>
-		  <div class="time sans-serif">
-			 
-			Five Thirty in the Evening
-		  </div>
-		</div>
-		<div class="description">
-		  <div class="activity">
-			<div class="adjective skinnyplay cursive">Delicious</div>
-			<div class="noun sans-serif">food</div>
-		  </div>
-		  <div class="and cursive">&</div>
-		  <div class="activity">
-			<div class="adjective skinnyplay cursive">Delightful</div>
-			<div class="noun sans-serif">dancing</div>
-		  </div>
-		  <div class="toFollow line cursive large">to follow!</div>
-		</div>
-		<div style="clear:both;"></div>
-	  </div>
-	</div>
+  	<div class="introducing tk-silkscreen">Introducing...</div>
+  	<div class="ourName cursive">Mr. & Mrs. Brakebill</div>
+  	<div class="married"></div>
+  	{{> photosLoader}}
   </div>
 </section>
 <section id="registries" class="tk-charbroiled">
@@ -261,45 +163,16 @@
 	{{/if}}
 </template>
 
+<template name="photosLoader">
+		<div class="photosLoader sans-serif">Photos</div>
+</template>
+
 <template name="replyCard">
 	<div class="thickbox">
-		<div class="cursive"><h1>Kindly reply by</h1></div>
-		<div class="sans-serif duedate"><label>AUTHOR</label><h2>THE 8TH OF MARCH</h2></div>
-		<div class="sans-serif title"><label>TITLE</label><h4>Fill out all required fields (in red.)</h4></div>
-		<div class="doublerow sans-serif heading"><div>DATE DUE</div><div class="">BORROWER'S NAME</div></div>
-		<form>
-			<div class="tk-john-doe salutation doublerow">
-				<div>3/8/13<br><br><span class="nameLabel">( Name )</span></div>
-				<div>
-					<input name="salutation" id="salutation" type="hidden">
-					<span class="option" data-value="mr">Mr.</span>/
-					<span class="option" data-value="mrs">Mrs.</span>/
-					<span class="option" data-value="miss">Miss</span><br>
-					<input name="name" type="text" placeholder="Click to edit."/>
-				</div>
-			</div>
-			<div class="tk-john-doe doublerow reply_status">
-				<div>
-					<span class="check">Check:</span>
-					<div class="box" id="yesbox" data-value="yes"></div>
-					<br><br>
-					<div class="box" id="nobox" data-value="no"></div>
-				</div>
-				<div>
-					<input name="reply_status" id="reply_status" type="hidden">
-					<span class="option" data-value="yes">Can't Wait!</span>
-					<span class="option" data-value="no">Sad to miss.</span>
-				</div>
-			</div>
-			<div class="doublerow num_attending tk-john-doe">
-				<div>No. Attending</div>
-				<div><input name="count" type="number" min="1" max="8" value="1"/></div>
-			</div>
-			<div class="doublerow notes tk-john-doe">
-				<div>Notes</div>
-				<textarea name="notes"></textarea>
-			</div>
-			<span class="sans-serif" id="submit">Reply</span>
-		</form>
+		<div class="photos">
+			{{#each photos}}
+				<img src="{{this.url}}" width="{{size}}px" height="{{size}}px"/>
+			{{/each}}
+		</div>
 	</div>
 </template>

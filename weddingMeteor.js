@@ -14,11 +14,33 @@ if (Meteor.isClient) {
       }
     });
 
+    Template.photosLoader.events({
+      'click, touchend':function(e){
+        e.stopPropagation();
+        $('.thickbox').fadeIn();
+        $('#thickboxBackdrop').fadeIn();
+      }
+    })
+
     Template.rsvpButton.hidden = function() {
       if ('ontouchstart' in window) {
         return 'hidden';
       }
     }
+
+    Template.replyCard.photos = function() {
+      var images = [];
+      for (var i=1; i <= 156; i++) {
+        var img = {};
+        img.url = 'images/Rambill/instagram' + (i < 100 ? '0' : '') + (i < 10 ? '0':'') + i + '.jpg';
+        images.push(img);
+      }
+      return images;
+    }
+
+    Template.replyCard.size = function() {
+      return Session.get('photoSize');
+    };
 
     Template.replyCard.events({
       'click .salutation .option:not(.circled), touchend .salutation .option:not(.circled)': function(e){
@@ -115,6 +137,7 @@ if (Meteor.isClient) {
 
   Meteor.startup(function() {
 
+    Session.set('photoSize', 280);
     Session.set('rsvpComplete', document.cookie.match('rsvp=') != null);
 
     $('body').bind('touchstart', function(e) {

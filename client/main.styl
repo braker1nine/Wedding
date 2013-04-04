@@ -44,6 +44,16 @@ span
 section#wedding
 	padding-bottom 100px
 
+	.married
+		width: 100%
+		background-image url('/../images/MARRIED.jpg')
+		height 300px
+		background-size 130% auto
+		background-position 50% 100%
+		border: 1px solid #333
+		border-radius 3px
+		box-shadow inset 0 1px 1px rgba(0,0,0,0.4)
+
 section 
 	width 100%
 	min-height 100%
@@ -255,6 +265,22 @@ nav
 	text-align center
 	margin auto
 	position: relative
+
+	.introducing
+		font-size 2rem
+
+	.ourName
+		font-size 5rem
+
+	.photosLoader
+		width: 100px;
+		height: 50px;
+		margin: auto;
+		border: 1px solid #222;
+		border-radius: 2px;
+		box-shadow: inset 0 1px 1px rgba(255,255,255,0.2), 0 1px 2px rgba(0,0,0,0.4);
+		font-size 2rem
+		padding-top: 7px;
 
 	.photowrapper
 		position: absolute
@@ -607,7 +633,7 @@ section
 				box-shadow: 0 0 3px rgba(0,0,0,0.8), inset 0 1px 1px rgba(255,255,255,0.6), inset 0 -1px 1px rgba(0,0,0,0.3);
 
 
-section#registries, section.groomsman, section#stamp
+section#registries, section.groomsman, section#stamp, #intro .photosLoader
 	background -webkit-linear-gradient(top, rgba(0,0,0,0.3), rgba(0, 0, 0, 0.15) 100px, rgba(0,0,0,0) 52%), 
 	-webkit-linear-gradient(bottom, rgba(0,0,0,0.2), rgba(0, 0, 0, 0.1) 100px, rgba(0,0,0,0) 52%), 
 	-webkit-linear-gradient(rgba(103,65,97,0.95), rgba(103,65,97,0.95)), noise 
@@ -671,183 +697,31 @@ section#gratitude
 					color cream
 
 div.thickbox
+	padding 20px
 	display none
 	position fixed
 	z-index 20000
 	top 50px
 	left 50%
-	width 320px
-	margin-left -160px
+	width 80%
+	height 80%
+	margin-left -40%
 	background-color #fffeef
 	border 1px solid #644834
 	box-shadow 0 0 100px rgba(0,0,0,0.9)
 	color #4d352c
 
-	h1
-		font-size 22px
-
-	h2
-		font-size 18px
-
-	.title h4
-		text-align right
-		padding-right 30px
-		padding-top 4px
-		color red
-		display none
-		font-size 12px
-
-	.title.error h4
-		display block
-
-	.doublerow.heading
-		word-spacing 0.4em
-		font-size 10px
-		height 40px
-
-		> div
-			height 40px
-
-	.doublerow
-		font-size 12px
-		position: relative
-		padding-top 0
-		text-align left
-		border-bottom 1px solid #644834
-
-		> div
-			box-sizing border-box
-
-		div
-			display inline-block
-
-		> :first-child
-			min-height: 50px;
-			width: 27%;
-			padding: 10px;
-			text-align: center;
-			border-right 2px dotted #644834
-			font-weight bold
-
-		> :last-child
-			width 70%
-			text-align center
-
-	.salutation
-		font-weight bold
-
-		.option
-			margin: 4px 6px 0 2px;
-			padding: 4px;
-			border: 2px solid transparent
-
-		.option.circled
-			border: 2px solid #4d352c;
-			border-radius: 50%;
-
-		input[name="name"]
-			background-color transparent
-			color #4d352c
-			padding 6px
-			width 200px
-			border 1px solid #4d352c
-			margin-top 8px
-
-		> :last-child
-			text-align left
-
-	.salutation.error
-		.nameLabel
-			color red
-
-		input[name="name"]
-			border 1px solid red
-
-
-	.reply_status
-		.check
-			-webkit-transform: rotate(-90deg);
-			-moz-transform: rotate(-90deg);
-			transform: rotate(-90deg)
-			position: absolute;
-			left: 14px;
-			top: 28px;
-
-		.box
-			width: 24px;
-			height: 24px;
-			border: 1px solid;
-			float: right;
-			font-size 18px
-
-		.box.checked::before
-			content '✓'
-
-		.option
-			display: block;
-			margin-top: 14px;
-
-		> :last-child
-			text-align left
-
-	.reply_status.error
-		color red
-
-		.box
-			border 1px solid red
-
-	.num_attending
-
-		border-bottom 3px double #644834
-
-		input[name="count"]
-			background-color: transparent;
-			border 1px solid transparent
-			width: 85px;
-			color: rgb(77, 53, 44);
-			font-size 22px
-
-	.num_attending.error
-		color red
-
-		input[name="count"]
-			border 1px solid red
-
-	.title
-		border-bottom 3px double
-
-	> div
-		border-bottom 1px solid #644834
+	.photos
+		height 100%;
 		text-align center
-		min-height 40px
-		position: relative
-		padding-top 6px
+		overflow-y scroll
+		-webkit-overflow-scrolling touch
 
-		label
-			position absolute
-			left 10px
-			top 2px
-			font-size 10px
+		img
+			margin 3px
+			border 6px solid white
+			box-shadow 0 0 3px rgba(0,0,0,0.4)
 
-	.notes
-		textarea
-			background-color transparent
-			text-align left
-			resize none
-			margin-bottom: -26px;
-			height: 48px;
-
-	#submit
-		position: absolute;
-		background-color: white;
-		padding: 10px 20px;
-		width: 80px;
-		left: 50%;
-		margin-left: -40px;
-		box-shadow: 0 5px 6px rgba(0,0,0,0.4);
-		background-color: #fffeef;
-		color: #4d352c;
-		text-align: center;
 
 section#stamp
 	margin-top -3px
