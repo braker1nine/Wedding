@@ -167,7 +167,7 @@ if (Meteor.isServer) {
 
 
       Email.send({
-        to:'',
+        to:'jramsey124@comcast.net',
         cc:['chris.brakebill@gmail.com', 'laureneleseramsey@gmail.com'],
         from: 'chris@rambill.com',
         subject:subject,
