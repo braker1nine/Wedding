@@ -1,5 +1,4 @@
 WeddingParty = new Meteor.Collection("weddingparty");
-RSVPs = new Meteor.Collection("RSVPs");
 
 if (Meteor.isClient) {
 
@@ -334,7 +333,7 @@ if (Meteor.isServer) {
         partyType: 'bridesmaid',
         title: 'Lover of Houndstooth',
         location: 'Powell, TN',
-        occupation: 'Penguins',
+        occupation: 'Insurance & Divorce Care for Kids',
         fromLauren: '(otherwise known as the K in BLARK) I met Kasey in Mrs. Termon\'s 2nd grade class. We played softball together, '+
           'cheered together, went to the same church together and lived in the same neighborhood. I mean, we grew up together. '+
           'And after we grew up and graduated high school, we remained friends. From all sorts of distances we remained in support '+
